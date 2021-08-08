@@ -10,9 +10,10 @@ function App() {
 
   return (
     <Container className="App" maxW="xl" centerContent>
+      <Heading>Georgia Tech Football Statistics</Heading>
       <Flex>
         <Box padding="4">
-          <Heading>Overall</Heading>
+          <Heading as={'h2'} size={'3x1'}>Overall</Heading>
           <LineChart
             width={500}
             height={300}
@@ -33,7 +34,7 @@ function App() {
         </Box>
 
         <Box padding="4">
-          <Heading>Offense</Heading>
+          <Heading as={'h2'} size={'3x1'}>Offense</Heading>
           <LineChart
             width={500}
             height={300}
@@ -54,7 +55,7 @@ function App() {
         </Box>
 
         <Box padding="4">
-          <Heading>Defense</Heading>
+          <Heading as={'h2'} size={'3x1'}>Defense</Heading>
           <LineChart
             width={500}
             height={300}
