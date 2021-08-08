@@ -1,78 +1,41 @@
 import './App.css';
 import gtFootballData from './gt_football_data.json';
-import {
-  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-} from 'recharts';
-import { Container, Box, Flex, Heading } from '@chakra-ui/react';
+import { Container, Box, Flex, Heading, Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
+
+import { OverallTab } from './tabs/overall'; 
+import { OffenseTab } from './tabs/offense';
+import { DefenseTab } from './tabs/defense';
 
 function App() {
   console.log(gtFootballData);
 
   return (
-    <Container className="App" maxW="xl" centerContent>
+    <Container className={'App'} maxW={'x1'}>
       <Heading>Georgia Tech Football Statistics</Heading>
       <Flex>
-        <Box padding="4">
-          <Heading as={'h2'} size={'3x1'}>Overall</Heading>
-          <LineChart
-            width={500}
-            height={300}
-            data={gtFootballData}
-            margin={{
-              top: 5, right: 30, left: 20, bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="year" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="win" stroke="#7fc97f" />
-            <Line type="monotone" dataKey="pointsPerGame" stroke="#386cb0" />
-            <Line type="monotone" dataKey="avgPointsPerGameAllowed" stroke="#f0027f" />
-          </LineChart>
-        </Box>
+        <Box py={'6'}>
+          <Tabs variant={'soft-rounded'} colorScheme={'yellow'}>
+            <TabList>
+              <Tab>Overall</Tab>
+              <Tab>Offense</Tab>
+              <Tab>Defense</Tab>
+              <Tab>Special Teams</Tab>
+            </TabList>
 
-        <Box padding="4">
-          <Heading as={'h2'} size={'3x1'}>Offense</Heading>
-          <LineChart
-            width={500}
-            height={300}
-            data={gtFootballData}
-            margin={{
-              top: 5, right: 30, left: 20, bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="year" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="offYardsPerGame" stroke="#7fc97f" />
-            <Line type="monotone" dataKey="passYardsPerGame" stroke="#386cb0" />
-            <Line type="monotone" dataKey="rushingYardsPerGame" stroke="#fdc086" />
-          </LineChart>
-        </Box>
+            <TabPanels>
+              <TabPanel>
+                <OverallTab />
+              </TabPanel>
 
-        <Box padding="4">
-          <Heading as={'h2'} size={'3x1'}>Defense</Heading>
-          <LineChart
-            width={500}
-            height={300}
-            data={gtFootballData}
-            margin={{
-              top: 5, right: 30, left: 20, bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="year" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="yardsPerGameAllowed" stroke="#f0027f" />
-            <Line type="monotone" dataKey="passYardsPerGameAllowed" stroke="#386cb0" />
-            <Line type="monotone" dataKey="rushYardsPerGameAllowed" stroke="#fdc086" />
-          </LineChart>
+              <TabPanel>
+                <OffenseTab />
+              </TabPanel>
+
+              <TabPanel>
+                <DefenseTab />
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
         </Box>
       </Flex>
     </Container>
