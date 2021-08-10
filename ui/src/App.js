@@ -19,7 +19,6 @@ function App() {
               <Tab>Overall</Tab>
               <Tab>Offense</Tab>
               <Tab>Defense</Tab>
-              <Tab>Special Teams</Tab>
             </TabList>
 
             <TabPanels>

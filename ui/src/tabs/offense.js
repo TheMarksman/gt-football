@@ -1,5 +1,4 @@
 import React from 'react';
-import { Heading } from '@chakra-ui/react';
 import {
 LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
@@ -22,9 +21,9 @@ function OffenseTab() {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="offYardsPerGame" stroke="#7fc97f" />
-        <Line type="monotone" dataKey="passYardsPerGame" stroke="#386cb0" />
-        <Line type="monotone" dataKey="rushingYardsPerGame" stroke="#fdc086" />
+        <Line type="monotone" dataKey="offYardsPerGame" name="Total Yards/Game" stroke="#7fc97f" />
+        <Line type="monotone" dataKey="passYardsPerGame" name="Pass Yards/Game" stroke="#386cb0" />
+        <Line type="monotone" dataKey="rushingYardsPerGame"  name="Rush Yards/Game" stroke="#fdc086" />
       </LineChart>
     </>
   );

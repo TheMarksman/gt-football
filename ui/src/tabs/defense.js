@@ -1,14 +1,16 @@
 import React from 'react';
-import { Heading } from '@chakra-ui/react';
 import {
 LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
+
+import { Heading } from '@chakra-ui/react';
 
 import gtFootballData from '../gt_football_data.json';
 
 function DefenseTab() {
   return (
     <>
+      <Heading as={'h2'} size={'3x1'}>Yards/Game Allowed</Heading>
       <LineChart
         width={500}
         height={300}
@@ -22,9 +24,9 @@ function DefenseTab() {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="yardsPerGameAllowed" stroke="#f0027f" />
-        <Line type="monotone" dataKey="passYardsPerGameAllowed" stroke="#386cb0" />
-        <Line type="monotone" dataKey="rushYardsPerGameAllowed" stroke="#fdc086" />
+        <Line type="monotone" dataKey="yardsPerGameAllowed"  name="Total Yards/Game" stroke="#f0027f" />
+        <Line type="monotone" dataKey="passYardsPerGameAllowed" name="Pass Yards/Game" stroke="#386cb0" />
+        <Line type="monotone" dataKey="rushYardsPerGameAllowed" name="Rush Yards/Game" stroke="#fdc086" />
       </LineChart>
     </>
   );
