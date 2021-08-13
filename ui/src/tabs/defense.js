@@ -65,6 +65,25 @@ function DefenseTab() {
             <Line type="monotone" dataKey="tackleForLossRank" name="Tackle For Loss Rank" stroke="#386cb0" />
           </LineChart>
       </Flex>
+
+      <Flex>
+        <LineChart
+          width={500}
+          height={300}
+          data={gtFootballData}
+          margin={{
+            top: 5, right: 30, left: 20, bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="year" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="opponent3RdPercent" name="3rd Down Conversion" stroke="#7fc97f" />
+          <Line type="monotone" dataKey="opponent4ThPercent" name="4th Down Conversion" stroke="#386cb0" />
+        </LineChart>
+      </Flex>
     </>
   );
 };
